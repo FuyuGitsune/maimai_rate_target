@@ -1,0 +1,46 @@
+body{
+    text-align: center;
+    font-family: "851ゴチカクット", "M PLUS 1 Regular", "M PLUS 2 Regular", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    
+}
+
+.error {
+    display: none; 
+}
+
+input:invalid + .error {
+    display: block;
+    color: red;
+    font-size: 0.9em;
+  }
+
+table{
+    margin: auto;
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+    border-collapse:  collapse;
+}
+
+th,td {
+    border: solid 1px;
+    padding: 3px; 
+}
+
+.calc {
+    border: 1px solid #000000;
+}
+
+.exbr{
+    line-height: 40px;
+}
+
+a{
+    color: #165e83;
+}
+
+.for_index{
+    font-size: 15px;
+    text-align: right;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="maimaiのレート値から達成率を定数毎に逆算します。">
+        <title>maimaiレート逆算</title>
+        <script src="rate_tar.js"></script>
+        <link rel="stylesheet" href="rate_tar.css">
+
+    </head>
+    <body>
+        <p>
+        <h1>mairate_tar</h1><hr>
+        <form onsubmit="calc();return false;">
+            <dev>
+                <label for="rate_num">目標レート値</label>
+                <input type="number" min="0" step="1" id="rate">
+                <input type="submit" value="決定">
+                <dev class="error">0以上の整数のみ入力できます。</dev>
+            </dev>
+        </form>
+        </p>
+        <p>
+        <table>
+            <tr>
+                <th>楽曲レート</th><th>達成値(%)</th>
+            </tr>
+            <tr>
+                <th>15.0</th><th id="per_150">------</th>
+            </tr>
+            <tr>
+                <th>14.9</th><th id="per_149">------</th>
+            </tr>
+            <tr>
+                <th>14.8</th><th id="per_148">------</th>
+            </tr>
+            <tr>
+                <th>14.7</th><th id="per_147">------</th>
+            </tr>
+            <tr>
+                <th>14.6</th><th id="per_146">------</th>
+            </tr>
+            <tr>
+                <th>14.5</th><th id="per_145">------</th>
+            </tr>
+            <tr>
+                <th>14.4</th><th id="per_144">------</th>
+            </tr>
+            <tr>
+                <th>14.3</th><th id="per_143">------</th>
+            </tr>
+            <tr>
+                <th>14.2</th><th id="per_142">------</th>
+            </tr>
+            <tr>
+                <th>14.1</th><th id="per_141">------</th>
+            </tr>
+            <tr>
+                <th>14.0</th><th id="per_140">------</th>
+            </tr>
+            <tr>
+                <th>13.9</th><th id="per_139">------</th>
+            </tr>
+            <tr>
+                <th>13.8</th><th id="per_138">------</th>
+            </tr>
+            <tr>
+                <th>13.7</th><th id="per_137">------</th>
+            </tr>
+            <tr>
+                <th>13.6</th><th id="per_136">------</th>
+            </tr>
+            <tr>
+                <th>13.5</th><th id="per_135">------</th>
+            </tr>
+            <tr>
+                <th>13.4</th><th id="per_134">------</th>
+            </tr>
+            <tr>
+                <th>13.3</th><th id="per_133">------</th>
+            </tr>
+            <tr>
+                <th>13.2</th><th id="per_132">------</th>
+            </tr>
+            <tr>
+                <th>13.1</th><th id="per_131">------</th>
+            </tr>
+            <tr>
+                <th>13.0</th><th id="per_130">------</th>
+            </tr>
+            <tr>
+                <th>12.9</th><th id="per_129">------</th>
+            </tr>
+            <tr>
+                <th>12.8</th><th id="per_128">------</th>
+            </tr>
+            <tr>
+                <th>12.7</th><th id="per_127">------</th>
+            </tr>
+            <tr>
+                <th>12.6</th><th id="per_126">------</th>
+            </tr>
+            <tr>
+                <th>12.5</th><th id="per_125">------</th>
+            </tr>
+            <tr>
+                <th>12.4</th><th id="per_124">------</th>
+            </tr>
+            <tr>
+                <th>12.3</th><th id="per_123">------</th>
+            </tr>
+            <tr>
+                <th>12.2</th><th id="per_122">------</th>
+            </tr>
+            <tr>
+                <th>12.1</th><th id="per_121">------</th>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>楽曲レート</th><th>達成値(%)</th>
+            </tr>
+            <tr>
+                <th>12.0</th><th id="per_120">------</th>
+            </tr>
+            <tr>
+                <th>11.9</th><th id="per_119">------</th>
+            </tr>
+            <tr>
+                <th>11.8</th><th id="per_118">------</th>
+            </tr>
+            <tr>
+                <th>11.7</th><th id="per_117">------</th>
+            </tr>
+            <tr>
+                <th>11.6</th><th id="per_116">------</th>
+            </tr>
+            <tr>
+                <th>11.5</th><th id="per_115">------</th>
+            </tr>
+            <tr>
+                <th>11.4</th><th id="per_114">------</th>
+            </tr>
+            <tr>
+                <th>11.3</th><th id="per_113">------</th>
+            </tr>
+            <tr>
+                <th>11.2</th><th id="per_112">------</th>
+            </tr>
+            <tr>
+                <th>11.1</th><th id="per_111">------</th>
+            </tr>
+            <tr>
+                <th>11.0</th><th id="per_110">------</th>
+            </tr>
+            <tr>
+                <th>10.9</th><th id="per_109">------</th>
+            </tr>
+            <tr>
+                <th>10.8</th><th id="per_108">------</th>
+            </tr>
+            <tr>
+                <th>10.7</th><th id="per_107">------</th>
+            </tr>
+            <tr>
+                <th>10.6</th><th id="per_106">------</th>
+            </tr>
+            <tr>
+                <th>10.5</th><th id="per_105">------</th>
+            </tr>
+            <tr>
+                <th>10.4</th><th id="per_104">------</th>
+            </tr>
+            <tr>
+                <th>10.3</th><th id="per_103">------</th>
+            </tr>
+            <tr>
+                <th>10.2</th><th id="per_102">------</th>
+            </tr>
+            <tr>
+                <th>10.1</th><th id="per_101">------</th>
+            </tr>
+            <tr>
+                <th>10.0</th><th id="per_100">------</th>
+            </tr>
+            <tr>
+                <th>9.9</th><th id="per_99">------</th>
+            </tr>
+            <tr>
+                <th>9.8</th><th id="per_98">------</th>
+            </tr>
+            <tr>
+                <th>9.7</th><th id="per_97">------</th>
+            </tr>
+            <tr>
+                <th>9.6</th><th id="per_96">------</th>
+            </tr>
+            <tr>
+                <th>9.5</th><th id="per_95">------</th>
+            </tr>
+            <tr>
+                <th>9.4</th><th id="per_94">------</th>
+            </tr>
+            <tr>
+                <th>9.3</th><th id="per_93">------</th>
+            </tr>
+            <tr>
+                <th>9.2</th><th id="per_92">------</th>
+            </tr>
+            <tr>
+                <th>9.1</th><th id="per_91">------</th>
+            </tr>
+        </table>
+        <hr>
+        </p>
+        <p>
+            <h2>説明</h2>
+            これはmaimaiの楽曲レート値から<br>
+            譜面定数に対する達成率を逆算するものです。<br>
+            似たようなものには<a href="https://sgimera.github.io/mai_RatingAnalyzer/maidx_calc.html">こちら</a>
+            があります。（すぎめーら氏による）<br>
+            こちらも併せて使うと良いと思われます。<br>
+
+            <h2>使い方</h2>
+            フォームに半角英数字で数値を入力し、<br>
+            Enterキーを押すか、決定ボタンを押してください。
+            
+            <h2>レート計算について</h2>
+            <span class="exbr">
+            maimaiにおけるレート計算は以下の式によってなされます。<br>
+            <span class="calc">楽曲Lv.(譜面定数) * 達成率(%/100) * 評価係数</span><br>
+            </span>
+            譜面定数と達成率は皆さんの御存じの通りですが、<br>
+            評価係数の参考サイトにおいて、<br>
+            ランクAAA未満の係数がずれているため、<br>
+            信頼性が落ちていることを注意してください。<br>
+            <a href="https://sgimera.github.io/mai_RatingAnalyzer/maidx_rating.html">参考サイト1</a>
+            <a href="https://gamerch.com/maimai/533647">参考サイト2</a><br>
+            このツールでは参考サイト2に掲載されている係数を使いました。<br>
+            また、境界係数は考慮に入れません。
+        </p><hr>
+        <p class="for_index">
+            <a href="index.html">FuyuGitsune_Topへ</a>
+        </p>
+    </body>
+</html>

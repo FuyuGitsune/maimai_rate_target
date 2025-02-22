@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang=ja>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="たすきがけの練習プログラムです">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<title>
+			たすきがけ練習
+		</title>
+		<script>
+			let a = 1;
+			let b = 1;
+			let c = 1;
+			//問題に使う変数の定義
+			
+			let nmax = 5;
+			let mmax = 5;
+			//問題の最大値設定
+			
+			let collect = 0; //正解数
+			let all = 0; //問題数
+			
+			let n1 = 1;
+			let n2 = 2;
+			let m1 = 1;
+			let m2 = 2;
+			//正解を格納するやつ
+			
+			let show_answ = 0;
+			let show_hint = 0;
+			let q_next = 0
+			
+			const gcd = (x, y) => x % y ? gcd(y, x % y) : y;
+			//使うところに意味が載ってる。
+			
+			function init(){
+				//初期化
+				nmax = 5;
+				mmax = 5;
+				set_abc();
+				collect = 0;
+				all = 0;
+				inner();
+			}
+			
+			function inner(){
+				//htmlの書き換えをする
+				document.getElementById('anum').innerHTML = a;
+				document.getElementById('bnum').innerHTML = b;
+				document.getElementById('cnum').innerHTML = c;
+				document.getElementById('qa').innerHTML = a;
+				if (b<0){
+					document.getElementById('qb').innerHTML = b;
+				}else{
+					document.getElementById('qb').innerHTML = "+" + b;
+				}
+				if (c<0){
+					document.getElementById('qc').innerHTML = c;
+				}else{
+					document.getElementById('qc').innerHTML = "+" + c;
+				}
+				document.getElementById('innax').innerHTML = nmax;
+				document.getElementById('inmax').innerHTML = mmax;
+				document.getElementById('collect').innerHTML = collect;
+				document.getElementById('all').innerHTML = all;
+				if (all == 0){
+					document.getElementById('percent').innerHTML = 0;
+				}else{
+					let percent = Math.floor(collect / all * 10000) / 100;
+					document.getElementById('percent').innerHTML = percent;
+				}
+				
+				if (show_answ > 0 || show_hint > 0 || q_next > 0){
+					let s_text = "(";
+					if (show_answ > 0){
+						s_text = s_text + "正解表示：" + show_answ + "回";
+					}
+					if (show_answ > 0 && show_hint > 0){
+						s_text = s_text + "　";
+					}
+					if (show_hint > 0){
+						s_text = s_text + "ヒント表示：" + show_hint + "回";
+					}
+					if (q_next > 0 && show_hint > 0){
+						s_text = s_text + "　";
+					}else if (q_next > 0 && show_answ > 0){
+						s_text = s_text + "　";
+					}
+					if (q_next > 0){
+						s_text = s_text + "問題送り：" + q_next + "回";
+					}
+					document.getElementById('show_ans').innerHTML = s_text + ")";
+				}
+			}
+			
+			function set_abc(){
+				//問題を作成する
+				n1 = Math.floor(Math.random() * nmax) + 1;
+				n2 = Math.floor(Math.random() * nmax) + 1;
+				m1 = Math.floor(Math.random() * nmax) + 1;
+				m2 = Math.floor(Math.random() * nmax) + 1;
+				//https://qiita.com/reopa_sharkun/items/9a24189792e05bd1faf1
+				//最大公約数のモダンな求め方。かっこいい！ありがと。
+				fgcd = gcd(n1, m1);
+				n1 = n1 / fgcd;
+				m1 = m1 / fgcd;
+				sgcd = gcd(n2, m2);
+				n2 = n2 / sgcd;
+				m2 = m2 / sgcd;
+				if (Math.floor(Math.random() * 2) + 1 == 1){
+					m1 = m1 * -1
+				}
+				
+				if (Math.floor(Math.random() * 2) + 1 == 1){
+					m2 = m2 * -1
+				}
+				
+				a = n1 * n2;
+				c = m1 * m2;
+				b = (n1 * m2) + (m1 * n2);
+			}
+			
+			function set_max(){
+				//最大値を変更する
+				let nmax_get = document.getElementById('nmax');
+				let mmax_get = document.getElementById('mmax');
+				if (nmax_get.value >= 1){
+					nmax = Math.floor(nmax_get.value);
+				}else{
+					let now = new Date();
+					document.getElementById('info').innerHTML = "設定n最大値に正の整数以外が書き込まれています！（" + now + ")";
+				}
+				if (mmax_get.value >= 1){
+					mmax = Math.floor(mmax_get.value);
+				}else{
+					let now = new Date();
+					document.getElementById('info').innerHTML = "設定m最大値に正の整数以外が書き込まれています！（" + now + ")";
+				}
+				inner();
+			}
+			
+			function show_ans(){
+				let pass = String(document.getElementById('pass').value);
+				let pass_ans = String(Math.abs(a)) + String(Math.abs(b)) + String(Math.abs(c));
+				if (pass === pass_ans){
+					ans_text = "n1:" + String(n1) + "　m1：" + String(m1) + "　n2：" + String(n2) + "　m2：" + String(m2);
+					let now = new Date();
+					document.getElementById('info').innerHTML = "ans_info　" +ans_text+ "（" + now + ")";
+					show_answ += 1;
+				}else if(pass === "hint"){
+					let now = new Date();
+					document.getElementById('info').innerHTML = "n1：" +String(n1)+ "　n2：" +String(n2)+ "（" + now + ")";
+					show_hint += 1;
+				}else if(pass === "next"){
+					let now = new Date();
+					document.getElementById('info').innerHTML = "問題を変えました。" + "（" + now + ")";
+					q_next += 1;
+					set_abc();
+				}else{
+					let now = new Date();
+					document.getElementById('info').innerHTML = "passが間違っています（" + now + ")";
+				}
+				inner();
+			}
+			
+			function check_ans(){
+				let ansn1 = document.getElementById('ansn1').value;
+				let ansn2 = document.getElementById('ansn2').value;
+				let ansm1 = document.getElementById('ansm1').value;
+				let ansm2 = document.getElementById('ansm2').value;
+				if (isNaN(ansn1) || isNaN(ansn2) || isNaN(ansm1) || isNaN(ansm2)){
+					let now = new Date();
+					document.getElementById('info').innerHTML = "数値を入力してください。不正解として処理します。（" + now + ")";
+				}else if (Number(ansn1) == n1 && Number(ansn2) == n2 && Number(ansm1) == m1 && Number(ansm2) == m2){
+					let now = new Date();
+					document.getElementById('info').innerHTML = "正解です！（" + now + ")";
+					collect += 1;
+				}else if(Number(ansn1) == n2 && Number(ansn2) == n1 && Number(ansm1) == m2 && Number(ansm2) == m1){
+					let now = new Date();
+					document.getElementById('info').innerHTML = "正解です！（" + now + ")";
+					collect += 1;
+				}else{
+					let now = new Date();
+					let pass = String(document.getElementById('pass').value);
+					let pass_ans = String(Math.abs(a)) + String(Math.abs(b)) + String(Math.abs(c));
+					if (pass === pass_ans){
+						ans_text1 = "　question=a：" + String(a) + "　b：" + String(b) + "　c：" + String(c);
+						ans_text2 = "　ans=n1:" + String(n1) + "　m1：" + String(m1) + "　n2：" + String(n2) + "　m2：" + String(m2);
+						ans_text = ans_text1 + ans_text2;
+						document.getElementById('info').innerHTML = "不正解-解答表示" +ans_text+ "（" + now + ")";
+					}else{
+						document.getElementById('info').innerHTML = "不正解です...（" + now + ")";
+					}
+				}
+				all += 1
+				set_abc();
+				inner();
+			}
+			
+			window.addEventListener("keydown", (e)=>{
+				const keycd = e.keyCode;
+				const onShift = e.shiftKey;
+				if (onShift){
+					switch (keycd){
+						case 78:
+							//n
+							document.getElementById('nmax').focus();
+							break;
+						case 77:
+							//m
+							document.getElementById('mmax').focus();
+							break;
+						case 66:
+							//b
+							set_max();
+							break;
+						case 65:
+							//a
+							document.getElementById('ansn1').focus();
+							break;
+						case 83:
+							//s
+							document.getElementById('ansm1').focus();
+							break;
+						case 68:
+							//d
+							document.getElementById('ansn2').focus();
+							break;
+						case 70:
+							//f
+							document.getElementById('ansm2').focus();
+							break;
+						case 13:
+							//enter
+							check_ans();
+							break;
+					}
+				}
+				if (e.ctrlKey && e.shiftKey){
+					document.getElementById('pass').focus();
+				}
+				if (e.shiftKey && e.altKey){
+					show_ans();
+				}
+			});
+		</script>
+		<style>
+			#title{
+				font-family: "JFドット東雲ゴシック14", "M PLUS 1 CODE", "ヒラギノ角ゴ ProN W3", "Arial", sans-serif;
+				color: #100736;
+				background-color: #b6b0d4;
+				font-size: 40px;
+				text-align: center;
+				border: double 10px gray;
+			}
+			
+			#explanation{
+				font-family: "JFドット東雲ゴシック14", "M PLUS 1 CODE", "ヒラギノ角ゴ ProN W3", "Arial", sans-serif;
+				font-size: 30px;
+				text-align: center;
+			}
+			
+			#ini{
+				font-family: "JFドット東雲ゴシック14", "M PLUS 1 CODE", "ヒラギノ角ゴ ProN W3", "Arial", sans-serif;
+				font-size: 20px;
+				float: left;
+				width: 50%;
+				text-align: center;
+				border-right: dashed 2px gray;
+				
+			}
+			
+			#ans{
+				font-family: "JFドット東雲ゴシック14", "M PLUS 1 CODE", "ヒラギノ角ゴ ProN W3", "Arial", sans-serif;
+				font-size: 20px;
+				text-align: center;
+				border-right: dashed 2px gray;
+				
+			}
+			
+			#check{
+				font-family: "JFドット東雲ゴシック14", "M PLUS 1 CODE", "ヒラギノ角ゴ ProN W3", "Arial", sans-serif;
+				font-size: 20px;
+				text-align: center;
+				border-top: solid 1px gray;
+				
+			}
+			
+			#comment{
+				font-family: "JFドット東雲ゴシック14", "M PLUS 1 CODE", "ヒラギノ角ゴ ProN W3", "Arial", sans-serif;
+				font-size: 13px;
+				text-align: center;
+				
+			}
+		</style>
+	</head>
+	<body onload="init();">
+		<p id="title">
+			たすきがけをするんだよ（圧）
+		</p>
+		<div id="explanation">
+			ax²+bx+c=0<br>
+			↓<br>
+			([n1]x+[m1])([n2]x+[m2])=0<hr>
+			a=<span id="anum">None</span>, 
+			b=<span id="bnum">None</span>, 
+			c=<span id="cnum">None</span>（<span id="qa">None</span>x²<span id="qb">None</span>x<span id="qc">None</span>=0）<hr>
+		</div>
+		<div id="ini">
+			設定欄<hr>
+			n最大値(n):<br>
+			<input type="number" id="nmax" value=5><br>
+			m最大値(m):<br>
+			<input type="number" id="mmax" value=5><br>
+			<input type="button" value="適応させる(b)" id="button1" onclick="set_max();"><br>
+		</div>
+		<div id="ans">
+			解答欄<hr>
+			n1(a)：<input type="number" size="15" value=1 id="ansn1"><br>m1(s)：<input type="number" size="15" value=1 id="ansm1"><br>
+			n2(d)：<input type="number" size="15" value=1 id="ansn2"><br>m2(f)：<input type="number" size="15" value=1 id="ansm2"><br>
+			<input type="button" value="解答確認(enter)" id="button2" onclick="check_ans();"><br>
+			pass(ctrl)：<input type="password" id="pass"><input type="button" value="表示(alt)" id="button3" onclick="show_ans();"><br>
+		</div>
+		<div id="check">
+			設定・成績確認<hr>
+			n最大値：<span id="innax">None</span>, m最大値：<span id="inmax">None</span><br>
+			正答率：<span id="collect">None</span>/<span id="all">None</span>(<span id="percent">None</span>%)<span id="show_ans"></span><hr>
+		</div>
+		<div id="comment">
+			<注意>回答確認はないです。<br>
+			mのみ負の数になる可能性があります<br>
+			ショートカットはカッコ内の文字をShiftキーを押しながら押すことによってできます。<br>
+			情報 >> <span id="info">ないです。</span><br>
+		</div>
+		<!--とりあえず完成しましたが、設定してないとこがあると思います。ご了承ください-->
+		<!--ここを見てくれた人におまけ機能。コードを読むとわかると思いますが、passに設定された文字列を打つと、解答や、ヒントを見れるよ。-->
+	</body>
+</html>
