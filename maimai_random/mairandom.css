@@ -9,6 +9,7 @@ body{
 
 /*参考文献：https://csshtml.work/click-button/ */
 
+
 .chartlv label{
   display: inline-block;
   width: 200px;
@@ -37,7 +38,7 @@ body{
   display: inline-block;
   width: 30px;
   padding: 10px 20px;
-  opacity: 0.3;
+  opacity: 0.2;
   font-size: 30px;
   letter-spacing: 5px;
   color: white;
@@ -57,8 +58,8 @@ body{
 .numlv{
   display: inline-block;
   width: 80px;
-  padding: 10px 20px;
-  opacity: 0.3;
+  padding: 20px 20px;
+  opacity: 0.2;
   font-size: 30px;
   letter-spacing: 5px;
   color: white;
@@ -70,37 +71,48 @@ body{
 
 .chartlv:has(input:checked)+.sle{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 .chartlv:has(input:checked)+.sle+.sle{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 .chartlv:has(input:checked)+.sle+.sle+.numlv{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 .chartlv:has(input:checked)+.sle+.sle+.numlv+.sle{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 .chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 
 .chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 .chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle+.sle{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 .chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle+.sle+.numlv{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 .chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle+.sle+.numlv+.sle{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 .chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle+.sle+.numlv+.sle+.sle{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 .chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle+.sle+.numlv+.sle+.sle+.sle{
     opacity: 0.5;
+    background-color: darkolivegreen;
 }
 
 /*https://qiita.com/yuaomo/items/55ec1c3ae15ffb272f9c を参考に。（というかそのまま）*/
@@ -120,14 +132,14 @@ body{
     width: 100%;
     max-width: 500px;
     background: rgb(216, 216, 216);
-    margin: 13% auto;
+    margin: 5% auto;
     padding: 20px;
     position: relative;
 }
 
 .finbut{
   display: inline-block;
-  width: 70px;
+  width: 150px;
   padding: 5px 10px;
   opacity: 0.7;
   font-size: 20px;
@@ -163,4 +175,84 @@ body{
 
 .difc input{
     display: none;
+}
+
+.dif1{
+    justify-content: space-around;
+}
+
+.dif1 label{
+  display: inline-block;
+  width: 70px;
+  padding: 5px 10px;
+  opacity: 0.7;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: white;
+  background-color: gray;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  height: 30px;
+
+}
+
+.dif1 input:checked+label{
+  background-color: darkcyan;
+
+}
+
+.dif1 input{
+    display: none;
+}
+
+
+.difbox label{
+  display: inline-block;
+  width: 220px;
+  padding: 15px 20px;
+  opacity: 0.2;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  background-color: gray;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+
+}
+
+.difbox input:checked+label{
+    background-color: gray;
+    opacity: 0.5;
+    color: #FFF;
+}
+
+.difbox input{
+    display: none;
+}
+
+.difc:has(input:checked)+.difbox label{
+    background-color: darkolivegreen;
+    opacity: 0.2;
+}
+
+.difc:has(input:checked)+.difbox input:checked+label{
+    background-color: darkolivegreen;
+    opacity: 0.5;
+}
+
+.gobut{
+    
+  display: inline-block;
+  width: 150px;
+  padding: 20px 20px;
+  opacity: 0.5;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  background-color: darkgoldenrod;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
 }

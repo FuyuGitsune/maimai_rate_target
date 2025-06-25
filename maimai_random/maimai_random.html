@@ -3,14 +3,14 @@
     <head>
         <link rel="stylesheet" href="mairandom.css">
         <script src="mairandom.js"></script>
-        
+        <title>ランダム課題曲</title>
     </head>
     <body>
         <dev class="tie">
             ランダム課題曲
         </dev><hr>
         <span class="chartlv" id="chartlv">
-            <input type="checkbox" checked id="chtf" onchange="chartlvc();"><label for="chtf"><span id="chtfcon">定数(ON)</span></label><br>
+            <input type="checkbox" checked id="chtf" onchange="chartlvc();"><label for="chtf"><span id="chtfcon">定数(ON)</span></label><br><br>
         </span>
         <span onclick="javascript:change_lvmin(0);" class="sle">≪</span>
         <span onclick="javascript:change_lvmin(1);" class="sle">&lt;</span>
@@ -25,15 +25,54 @@
         <span onclick="javascript:change_lvmax(3);" class="sle">≫</span>
 
     
-        <br>
+        <hr>
         <span class="difc" id="difc">
-            <input type="checkbox" checked id="diftf" onchange="diftf();"><label for="diftf"><span id="difval">難易度(ON)</span></label><br>
+            <input type="checkbox" checked id="diftf" onchange="diftf();"><label for="diftf"><span id="difval">難易度(ON)</span></label><br><br>
         </span>
+        <form class="difbox">
+            <input type="checkbox" id="difbox0" value="0" name="difb"><label for="difbox0">BASIC</label>
+            <input type="checkbox" id="difbox1" value="1" name="difb"><label for="difbox1">ADVANCED</label><br>
+            <input type="checkbox" id="difbox2" value="2" name="difb"><label for="difbox2">EXPERT</label>
+            <input type="checkbox" checked id="difbox3" value="3" name="difb"><label for="difbox3">MASTER</label>
+            <input type="checkbox" id="difbox4" value="4" name="difb"><label for="difbox4">Re:MASTER</label>
+        </form>
+        <hr>
+        <input type="button" value="抽選" class="gobut" onclick="alert('建設中。ちょいまち');">
+        <span style="display: flex;justify-content:flex-end;font-size: 20px;"><a href="../index.html">FuyuGitsune Topへ</a></span>
 
         <div id="popup-wrapper" class="popup-wrapper">
             <div id="popup-inside" class="popup-inside">
                 <div id="message" class="message">
-                    <input type="button" value="終了" class="finbut" onclick="closepop();">
+                    <span style="text-align: center;font-size: 25px;">定数選択</span><hr>
+                    <form class="dif1" id="selector">
+                        <input type="radio" id="difrad1" name="dif10" value="1"><label for="difrad1">1</label>
+                        <input type="radio" id="difrad2" name="dif10" value="2"><label for="difrad2">2</label>
+                        <input type="radio" id="difrad3" name="dif10" value="3"><label for="difrad3">3</label>
+                        <input type="radio" id="difrad4" name="dif10" value="4"><label for="difrad4">4</label>
+                        <input type="radio" id="difrad5" name="dif10" value="5"><label for="difrad5">5</label><br>
+                        <input type="radio" id="difrad6" name="dif10" value="6"><label for="difrad6">6</label>
+                        <input type="radio" id="difrad7" name="dif10" value="7"><label for="difrad7">7</label>
+                        <input type="radio" id="difrad8" name="dif10" value="8"><label for="difrad8">8</label>
+                        <input type="radio" id="difrad9" name="dif10" value="9"><label for="difrad9">9</label>
+                        <input type="radio" id="difrad10" name="dif10" value="10"><label for="difrad10">10</label><br>
+                        <input type="radio" id="difrad11" name="dif10" value="11"><label for="difrad11">11</label>
+                        <input type="radio" id="difrad12" name="dif10" value="12"><label for="difrad12">12</label>
+                        <input type="radio" checked id="difrad13" name="dif10" value="13"><label for="difrad13">13</label>
+                        <input type="radio" id="difrad14" name="dif10" value="14"><label for="difrad14">14</label>
+                        <input type="radio" id="difrad15" name="dif10" value="15"><label for="difrad15">15</label><hr>
+                        <input type="radio" id="difrad00" name="dif01" value="0"><label for="difrad00">.0</label>
+                        <input type="radio" id="difrad01" name="dif01" value="1"><label for="difrad01">.1</label>
+                        <input type="radio" id="difrad02" name="dif01" value="2"><label for="difrad02">.2</label>
+                        <input type="radio" id="difrad03" name="dif01" value="3"><label for="difrad03">.3</label>
+                        <input type="radio" id="difrad04" name="dif01" value="4"><label for="difrad04">.4</label><br>
+                        <input type="radio" checked id="difrad05" name="dif01" value="5"><label for="difrad05">.5</label>
+                        <input type="radio" id="difrad06" name="dif01" value="6"><label for="difrad06">.6</label>
+                        <input type="radio" id="difrad07" name="dif01" value="7"><label for="difrad07">.7</label>
+                        <input type="radio" id="difrad08" name="dif01" value="8"><label for="difrad08">.8</label>
+                        <input type="radio" id="difrad09" name="dif01" value="9"><label for="difrad09">.9</label><hr>
+                    </form>
+                    <input type="button" value="決定" class="finbut" onclick="admitpop();">
+                    <input type="button" value="キャンセル" class="finbut" onclick="closepop();">
                 </div>
             </div>
         </div>

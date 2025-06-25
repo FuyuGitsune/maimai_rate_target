@@ -30,6 +30,9 @@ function diftf(){
 }
 
 function change_lvmin(type){
+    if (document.getElementById("chtf").checked == false){
+        return;
+    }
     switch (type){
         case 0:
             lvoc_min -= 10;
@@ -58,6 +61,9 @@ function change_lvmin(type){
 }
 
 function change_lvmax(type){
+    if (document.getElementById("chtf").checked == false){
+        return;
+    }
     switch (type){
         case 0:
             lvoc_max -= 10;
@@ -85,10 +91,42 @@ function change_lvmax(type){
 }
 
 function popup(type){
+    if (document.getElementById("chtf").checked == false){
+        return;
+    }
     popup_type = type;
     document.getElementById('popup-wrapper').style.display = "block";
 }
 
 function closepop(){
+    document.getElementById('popup-wrapper').style.display = "none";
+}
+
+function admitpop(){
+    num = Number(document.querySelector('#selector').dif10.value + document.querySelector('#selector').dif01.value);
+    if(popup_type == 0){
+        lvoc_min = num;
+        if (lvoc_min < 10){
+            lvoc_min = 10;
+        }else if(lvoc_min > 150){
+            lvoc_min = 150;
+        }
+
+        if(lvoc_min > lvoc_max){
+            lvoc_max = lvoc_min;
+        }
+    }else if(popup_type == 1){
+        lvoc_max = num;
+        if (lvoc_max < 10){
+            lvoc_max = 10;
+        }else if(lvoc_max > 150){
+            lvoc_max = 150;
+        }
+        if(lvoc_min > lvoc_max){
+            lvoc_min = lvoc_max;
+        }
+    }
+    document.getElementById("numlvmin").textContent = (lvoc_min / 10).toFixed(1);
+    document.getElementById("numlvmax").textContent = (lvoc_max / 10).toFixed(1);
     document.getElementById('popup-wrapper').style.display = "none";
 }
