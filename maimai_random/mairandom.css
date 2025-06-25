@@ -1,0 +1,166 @@
+.tie{
+    text-shadow: 0 1.5px #e7e7e7, 0 -1.5px #e7e7e7, 1.5px 0 #e7e7e7, -1.5px 0 #e7e7e7, 0.707px 0.707px #e7e7e7, 0.707px -0.707px #e7e7e7, -0.707px 0.707px #e7e7e7, -0.707px -0.707px #e7e7e7;
+}
+body{
+    background-color: #dddddd;
+    text-align: center;
+    font-size:45px;
+}
+
+/*参考文献：https://csshtml.work/click-button/ */
+
+.chartlv label{
+  display: inline-block;
+  width: 200px;
+  padding: 10px 20px;
+  opacity: 0.2;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  background-color: darkblue;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.chartlv input:checked+label{
+    background-color: darkblue;
+    opacity: 0.5;
+    color: #FFF;
+}
+
+.chartlv input{
+    display: none;
+}
+
+.sle{
+  display: inline-block;
+  width: 30px;
+  padding: 10px 20px;
+  opacity: 0.3;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  background-color: gray;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.sle:hover{
+    background:#459793;
+}
+.sle:active{
+    background:#306b68;
+}
+
+.numlv{
+  display: inline-block;
+  width: 80px;
+  padding: 10px 20px;
+  opacity: 0.3;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  background-color: gray;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.chartlv:has(input:checked)+.sle{
+    opacity: 0.5;
+}
+.chartlv:has(input:checked)+.sle+.sle{
+    opacity: 0.5;
+}
+.chartlv:has(input:checked)+.sle+.sle+.numlv{
+    opacity: 0.5;
+}
+.chartlv:has(input:checked)+.sle+.sle+.numlv+.sle{
+    opacity: 0.5;
+}
+.chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle{
+    opacity: 0.5;
+}
+
+.chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle{
+    opacity: 0.5;
+}
+.chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle+.sle{
+    opacity: 0.5;
+}
+.chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle+.sle+.numlv{
+    opacity: 0.5;
+}
+.chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle+.sle+.numlv+.sle{
+    opacity: 0.5;
+}
+.chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle+.sle+.numlv+.sle+.sle{
+    opacity: 0.5;
+}
+.chartlv:has(input:checked)+.sle+.sle+.numlv+.sle+.sle+.sle+.sle+.numlv+.sle+.sle+.sle{
+    opacity: 0.5;
+}
+
+/*https://qiita.com/yuaomo/items/55ec1c3ae15ffb272f9c を参考に。（というかそのまま）*/
+
+.popup-wrapper{
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.popup-inside{
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    background: rgb(216, 216, 216);
+    margin: 15% auto;
+    padding: 20px;
+    position: relative;
+}
+
+.finbut{
+  display: inline-block;
+  width: 70px;
+  padding: 5px 10px;
+  opacity: 0.7;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: white;
+  background-color: gray;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/*参考にしたところ終わり*/
+
+.difc label{
+  display: inline-block;
+  width: 220px;
+  padding: 10px 20px;
+  opacity: 0.2;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  background-color: darkblue;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.difc input:checked+label{
+    background-color: darkblue;
+    opacity: 0.5;
+    color: #FFF;
+}
+
+.difc input{
+    display: none;
+}

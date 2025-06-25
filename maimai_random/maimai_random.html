@@ -1,7 +1,41 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
+        <link rel="stylesheet" href="mairandom.css">
+        <script src="mairandom.js"></script>
+        
     </head>
     <body>
+        <dev class="tie">
+            ランダム課題曲
+        </dev><hr>
+        <span class="chartlv" id="chartlv">
+            <input type="checkbox" checked id="chtf" onchange="chartlvc();"><label for="chtf"><span id="chtfcon">定数(ON)</span></label><br>
+        </span>
+        <span onclick="javascript:change_lvmin(0);" class="sle">≪</span>
+        <span onclick="javascript:change_lvmin(1);" class="sle">&lt;</span>
+        <span class="numlv" id="numlvmin" onclick="popup(0)">13.5</span>
+        <span onclick="javascript:change_lvmin(2);" class="sle">&gt;</span>
+        <span onclick="javascript:change_lvmin(3);" class="sle">≫</span>
+        ~
+        <span onclick="javascript:change_lvmax(0);" class="sle">≪</span>
+        <span onclick="javascript:change_lvmax(1);" class="sle">&lt;</span>
+        <span class="numlv" id="numlvmax" onclick="popup(1)">13.5</span>
+        <span onclick="javascript:change_lvmax(2);" class="sle">&gt;</span>
+        <span onclick="javascript:change_lvmax(3);" class="sle">≫</span>
+
+        <div id="popup-wrapper" class="popup-wrapper">
+            <div id="popup-inside" class="popup-inside">
+                <div id="message" class="message">
+                    <input type="button" value="終了" class="finbut" onclick="closepop();">
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <span class="difc" id="difc">
+            <input type="checkbox" checked id="diftf" onchange="diftf();"><label for="diftf"><span id="difval">難易度(ON)</span></label><br>
+        </span>
+
     </body>
 </html>
