@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="mairandom.css">
-        <script src="mairandom.js"></script>
+        <script src="mairandom.js" charset="utf-8"></script>
+        <script src="lottery.js" charset="utf-8"></script>
         <title>ランダム課題曲</title>
     </head>
     <body>
@@ -38,7 +39,7 @@
             <input type="checkbox" id="difbox4" value="4" name="difb"><label for="difbox4">Re:MASTER</label>
         </form>
         <hr>
-        <input type="button" value="抽選" class="gobut" onclick="alert('建設中。ちょいまち');">
+        <input type="button" value="抽選" class="gobut" onclick="pop_out();">
         <span style="display: flex;justify-content:flex-end;font-size: 20px;"><a href="../index.html">FuyuGitsune Topへ</a></span>
 
         <div id="popup-wrapper" class="popup-wrapper">
@@ -74,6 +75,39 @@
                     </form>
                     <input type="button" value="決定" class="finbut" onclick="admitpop();">
                     <input type="button" value="キャンセル" class="finbut" onclick="closepop();">
+                </div>
+            </div>
+        </div>
+
+        <div id="out-popup" class="out-popup">
+            <div id="out-inside" class="out-inside">
+                <div id="out-mes" class="out-mes">
+                    <span class="result">抽選結果</span>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td><span class="result">譜面</span></td>
+                            <td><span class="rescon" id="chart_name">None</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="result">BPM</span></td>
+                            <td><span class="rescon" id="chart_bpm">None</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="result">作曲者</span></td>
+                            <td><span class="rescon" id="chart_comp">None</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="result">難易度</span></td>
+                            <td><span class="rescon" id="chart_diff">None</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="result">定数</span></td>
+                            <td><span class="rescon" id="chart_num">None</span></td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <input type="button" value="閉じる" class="finbut" onclick="closeout();">
                 </div>
             </div>
         </div>

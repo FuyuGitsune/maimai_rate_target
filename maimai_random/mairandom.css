@@ -151,6 +151,27 @@ body{
   border-radius: 10px;
 }
 
+.out-popup{
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    font-size: 30px;
+}
+
+.out-inside{
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    background: rgb(216, 216, 216);
+    margin: 8% auto;
+    padding: 20px;
+    position: relative;
+}
+
 /*参考にしたところ終わり*/
 
 .difc label{
@@ -252,6 +273,33 @@ body{
   letter-spacing: 5px;
   color: white;
   background-color: darkgoldenrod;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.result{
+  display: inline-block;
+  width: 150px;
+  padding: 1px 10px;
+  opacity: 0.5;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: black;
+  background-color: rgb(128, 185, 128);
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+}
+.rescon{
+  display: inline-block;
+  width: 600px;
+  padding: 1px 10px;
+  opacity: 0.5;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: black;
+  background-color: #5EEAC7;
   text-decoration: none;
   text-align: center;
   border-radius: 10px;

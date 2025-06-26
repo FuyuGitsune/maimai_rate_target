@@ -102,6 +102,16 @@ function closepop(){
     document.getElementById('popup-wrapper').style.display = "none";
 }
 
+function closeout(){
+    document.getElementById('out-popup').style.display = "none";
+}
+
+function pop_out(type){
+    lottery(lvoc_min, lvoc_max);
+    popup_type = type;
+    document.getElementById('out-popup').style.display = "block";
+}
+
 function admitpop(){
     num = Number(document.querySelector('#selector').dif10.value + document.querySelector('#selector').dif01.value);
     if(popup_type == 0){
