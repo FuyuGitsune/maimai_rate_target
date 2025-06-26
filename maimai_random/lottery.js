@@ -1,6 +1,7 @@
 fetch("./datalist.csv").then(res => res.text()).then(text =>{
     const datalist = text;
-})
+    console.log(datalist);
+});
 
 function lottery(lv_min, lv_max){
     switch (document.getElementById("chtf").checked + document.getElementById("diftf").checked * 2){
