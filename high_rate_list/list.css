@@ -1,0 +1,47 @@
+img{
+    width: 10vw;
+}
+
+body{
+    background-color: #f5f5f5;
+}
+
+.diff{
+    border: 7px double black;
+}
+
+.tsp {
+    border: 7px solid #C7BFE7;
+}
+
+.ts {
+    border: 7px solid #99D9EA;
+}
+
+.dsp {
+    border: 7px solid #9EBEB9;
+}
+
+.ds {
+    border: 7px solid #BDE6C6;
+}
+
+.sp {
+    border: 7px solid #FFADC9;
+}
+
+.s {
+    border: 7px solid #EFE4B1;
+}
+
+.none{
+    border: 7px solid #f5f5f5;
+}
+
+.achino{
+    border: 5px solid #f5f5f5;
+}
+
+.achina{
+    border: 5px solid darkcyan;
+}
