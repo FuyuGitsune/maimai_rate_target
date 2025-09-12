@@ -14,29 +14,57 @@ body{
     border: 7px solid #C7BFE7;
 }
 
+.tsptext {
+    background: #C7BFE7;
+}
+
 .ts {
     border: 7px solid #99D9EA;
+}
+
+.tstext{
+    background: #99D9EA;
 }
 
 .dsp {
     border: 7px solid #9EBEB9;
 }
 
+.dsptext {
+    background: #9EBEB9;
+}
+
 .ds {
     border: 7px solid #BDE6C6;
+}
+
+.dstext {
+    background: #BDE6C6;
 }
 
 .sp {
     border: 7px solid #FFADC9;
 }
 
+.sptext {
+    background: #FFADC9;
+}
+
 .s {
     border: 7px solid #EFE4B1;
+}
+
+.stext{
+    background: #EFE4B1;
 }
 
 .none{
     border: 7px solid #f5f5f5;
     filter: brightness(0.5);
+}
+
+.nonetext{
+    background: #f5f5f5;
 }
 
 .achino{
