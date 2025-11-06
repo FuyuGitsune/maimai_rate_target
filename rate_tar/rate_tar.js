@@ -10,8 +10,11 @@ function calc(){
     input_num = Number(input_num);
     for (i=91; i < 151; i++){
         //ここに処理
-        if (input_num / (i / 10) / constant[0] * 100 > 100.5){
+        if (input_num / (i / 10) / constant[0] * 100 > 100.5 && input_num > ((i/10) * (100.5 / 100) * 22.4) + 1){
             document.getElementById("per_" + String(i)).textContent = '--xx--';
+            continue;
+        }else if (((i/10) * (100.5 / 100) * 22.4) < input_num  && input_num <= ((i/10) * (100.5 / 100) * 22.4) + 1){
+            document.getElementById("per_" + String(i)).textContent = '>-AP-<';
             continue;
         }else{
             //ここで計算する。
