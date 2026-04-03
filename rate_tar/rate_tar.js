@@ -5,9 +5,20 @@ const pers     = [200, 100.5 , 100.00, 99.50, 99.00, 98.00, 97.00, 94.00, 90.00,
 
 let percent = 0;
 
-function calc(){
+
+function calc_single(){
     let input_num = document.getElementById('rate').value;
     input_num = Number(input_num);
+    calc(input_num);
+}
+
+function calc_all(){
+    let input_num = document.getElementById('s_rate').value;
+    input_num = Math.ceil(Number(input_num) / 50);
+    calc(input_num);
+}
+
+function calc(input_num){
     for (i=91; i < 151; i++){
         //ここに処理
         if (input_num / (i / 10) / constant[0] * 100 > 100.5 && input_num > ((i/10) * (100.5 / 100) * 22.4) + 1){

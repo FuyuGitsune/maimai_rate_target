@@ -11,9 +11,17 @@
     <body>
         <p>
         <h1>mairate_tar</h1><hr>
-        <form onsubmit="calc();return false;">
+        <form onsubmit="calc_all();return false;">
             <dev>
-                <label for="rate_num">目標レート値</label>
+                <label for="rating">目標総合レート値</label>
+                <input type="number" min="0" step="1" id="s_rate" style="height: 25px;">
+                <dev class="error">0以上の整数のに入力できます。</dev>
+            </dev>
+        </form><br>
+
+        <form onsubmit="calc_single();return false;">
+            <dev>
+                <label for="rate_num">目標単曲レート値</label>
                 <input type="number" min="0" step="1" id="rate" style="height:25px;">
                 <dev class="error">0以上の整数のみ入力できます。</dev>
             </dev>
@@ -227,7 +235,8 @@
 
             <h2>使い方</h2>
             フォームに半角英数字で数値を入力し、<br>
-            Enterキーを押してください。
+            Enterキーを押してください。<br>
+            単曲レート値からの逆算と、総合レート値から平均単曲レート値を計算して逆算するものがあります。
             
             <h2>レート計算について</h2>
             <span class="exbr">
