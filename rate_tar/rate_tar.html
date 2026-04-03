@@ -15,9 +15,11 @@
             <dev>
                 <label for="rating">目標総合レート値</label>
                 <input type="number" min="0" step="1" id="s_rate" style="height: 25px;">
-                <dev class="error">0以上の整数のに入力できます。</dev>
+                <dev class="error">0以上の整数のに入力できます。</dev><br>
+                <label><input type="checkbox" id="is_ceil" checked>↑について、除算後切り上げ処理を行なう</label>
             </dev>
-        </form><br>
+        </form>
+        <br>
 
         <form onsubmit="calc_single();return false;">
             <dev>

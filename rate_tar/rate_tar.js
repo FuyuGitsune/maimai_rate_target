@@ -14,7 +14,9 @@ function calc_single(){
 
 function calc_all(){
     let input_num = document.getElementById('s_rate').value;
-    input_num = Math.ceil(Number(input_num) / 50);
+    let is_ceil = document.getElementById('is_ceil').checked;
+    input_num = Number(input_num) / 50;
+    if (is_ceil){input_num = Math.ceil(input_num);}
     calc(input_num);
 }
 
