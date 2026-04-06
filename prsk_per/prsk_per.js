@@ -42,7 +42,7 @@ function calc(){
     let super_score = (perfect * super_coefficient[0] + good * super_coefficient[2] + bad * super_coefficient[3] + miss * super_coefficient[4]);
     let super_per = super_score / (all_notes * super_coefficient[0]);
 
-    let star = ((-25000 / 9) * super_per * super_per + (50000 / 9) * super_per - (24910 / 9)).toFixed(2);
+    let star = ((-25000 / 9) * super_per * super_per + (50000 / 9) * super_per - (24910 / 9)).toFixed(4);
     if (star >= 0){
         output_str = output_str + "+" + star.toString() + "(" + super_score.toString() + "/" + (all_notes * super_coefficient[0]).toString() + ")";
     }else{
