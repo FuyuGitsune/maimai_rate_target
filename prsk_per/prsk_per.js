@@ -1,5 +1,5 @@
-const nomal_coefficient = [ 3.0, 1.5,  1.2,   1.0,   0.0];
-const super_coefficient = [30.0, 0.0, -20.0, -25.0, -30.0];
+const nomal_coefficient = [ 3.0, 1.5,  1.2,  1.0,   0.0];
+const super_coefficient = [10.0, 0.0, -3.0, -5.0, -10.0];
 
 function calc(){
     let perfect = Number(document.getElementById('perfect').value);
