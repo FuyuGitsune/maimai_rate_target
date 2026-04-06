@@ -1,0 +1,24 @@
+body{
+    text-align: center;
+    font-size: large;
+}
+
+table{
+    margin: auto;
+    display: inline-block;
+    margin: 5px;
+    vertical-align: top;
+    border-collapse:  collapse;
+    padding: 5px;
+}
+
+button{
+    width: 100px;
+    height: 50px;
+    font-size: large;
+}
+
+.for_index{
+    font-size: 15px;
+    text-align: right;
+}
