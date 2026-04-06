@@ -1,5 +1,5 @@
-const nomal_coefficient = [ 3.0, 1.5,  1.2,  1.0,   0.0];
-const super_coefficient = [25.0, 0.0, -3.0, -5.0, -10.0];
+const nomal_coefficient = [ 3.0, 1.5,  1.2,   1.0,   0.0];
+const super_coefficient = [30.0, 0.0, -20.0, -25.0, -30.0];
 
 function calc(){
     let perfect = Number(document.getElementById('perfect').value);
@@ -11,7 +11,7 @@ function calc(){
 
     let output_str = "";
 
-    let normal_per = (perfect * 3 + great * 1.5 + good * 1.2 + bad * 1) / (all_notes * 3) * 100;
+    let normal_per = (perfect * nomal_coefficient[0] + great * nomal_coefficient[1] + good * nomal_coefficient[2] + bad * nomal_coefficient[3]) / (all_notes * nomal_coefficient[0]) * 100;
 
     document.getElementById('per').textContent = String(normal_per.toFixed(4)) + "%";
 
@@ -39,14 +39,14 @@ function calc(){
         output_str += "<F> ";
     }
 
-    let super_score = (perfect * 25 + good * (-3) + bad * (-5) + miss * (-10));
-    let super_per = super_score / (all_notes * 25);
+    let super_score = (perfect * super_coefficient[0] + good * super_coefficient[2] + bad * super_coefficient[3] + miss * super_coefficient[4]);
+    let super_per = super_score / (all_notes * super_coefficient[0]);
 
     let star = ((-25000 / 9) * super_per * super_per + (50000 / 9) * super_per - (24910 / 9)).toFixed(2);
     if (star >= 0){
-        output_str = output_str + "+" + star.toString() + "(" + super_score.toString() + "/" + (all_notes * 25).toString() + ")";
+        output_str = output_str + "+" + star.toString() + "(" + super_score.toString() + "/" + (all_notes * super_coefficient[0]).toString() + ")";
     }else{
-        output_str = output_str + star.toString() + "(" + super_score.toString() + "/" + (all_notes * 25).toString() + ")";
+        output_str = output_str + star.toString() + "(" + super_score.toString() + "/" + (all_notes * super_coefficient[0]).toString() + ")";
     }
 
     document.getElementById('rank').textContent = output_str;
