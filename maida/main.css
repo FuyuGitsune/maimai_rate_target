@@ -1,0 +1,150 @@
+@charset "utf-8";
+*{
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #101040;
+	color: #cccccc;
+}
+.container{
+	max-width: 980px;
+	padding: 0, 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.footer{
+	height: 120px;
+	background-color: #4b6464;
+	color: #e4e4e4;
+	padding-top: 20px;
+}
+.footer_main{
+	float: left;
+}
+.footer_right{
+	float: right;
+	padding-top: 50px;
+	padding-right: 10px;
+}
+.number{
+	width: 60px;
+}
+.dxscore{
+	width: 10em;
+}
+.main{
+	text-align: center;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	padding: 20px;
+	background-color: #545262;
+	width: 85%;
+	height: 5;
+	border-radius: 5px;
+	box-shadow: 4px 4px 10px 2px #aaaaaa;
+	line-height: 2;
+}
+
+.result{
+	text-align: center;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	padding: 20px;
+	background-color: #545262;
+	width: 85%;
+	height: 5;
+	border-radius: 5px;
+	box-shadow: 4px 4px 10px 2px #aaaaaa;
+}
+
+.BASIC{
+	background: linear-gradient(270deg, #000000, #4A9642);
+}
+.ADVANCED{
+	background: linear-gradient(270deg, #000000, #A49426);
+}
+.EXPERT{
+	background: linear-gradient(270deg, #000000, #AA565E);
+}
+.MASTER{
+	background: linear-gradient(270deg, #000000, #8054A2);
+}
+.ReMASTER{
+	background: linear-gradient(270deg, #000000, #98929C);
+}
+.UTAGE{
+	background: linear-gradient(270deg, #000000, #9C5490);
+}
+.yes{
+	background: linear-gradient(270deg, #000000, #9C4000);
+}
+.no{
+	background: linear-gradient(270deg, #000000, #0E5E83);
+}
+
+.clear{
+	clear: both;
+}
+
+.track{
+	opacity: 0.75;
+	float: left;
+	margin-bottom: 0;
+}
+
+.chart_info{
+	vertical-align: middle;
+	float: right;
+	margin-bottom: 0;
+}
+
+.diff_text{
+	font-size: 30px;
+}
+
+.ach_info{
+	font-size: 75px;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: -10px;
+	margin-left: 50px;
+}
+
+.ch_title{
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: -45px;
+	text-align: center;
+
+}
+
+.dx_info{
+	float: right;
+}
+
+.detail{
+	float: left;
+}
+
+.show_hp{
+	font-size: 50px;
+}
+
+
+.info{
+	width: 70%;
+	margin: 20px auto;
+	padding: 5px 20px;
+	color: #eeeeee;
+	border-radius: 5px;
+	box-shadow: 4px 4px 10px 2px #aaaaaa;
+}
+

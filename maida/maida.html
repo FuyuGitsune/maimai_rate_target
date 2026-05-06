@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="main.css">
+		<script src="main.js"></script>
+		<title>maimai創作段位リザルト</title>
+
+	</head>
+	<body>
+		<div class="main">
+			maimai創作段位リザルトメーカー
+			<form onsubmit="return false" name="daninfo">
+				段位名:
+				<input type="text" name="name" id="daneme">
+				初期HP:
+				<input type="number" name="inhp" min="0" class="number" id="init_hp"><br>
+				減少幅:
+				<input type="number" name="perde" min="0" class="number" placeholder="PERFECT" id="d_pe">
+				<input type="number" name="perde" min="0" class="number" placeholder="GREAT" id="d_gr">
+				<input type="number" name="perde" min="0" class="number" placeholder="GOOD" id="d_go">
+				<input type="number" name="perde" min="0" class="number" placeholder="MISS" id="d_mi">
+				回復:
+				<input type="number" name="perde" min="0" class="number" id="heal">
+				<input type="radio" name="tof" value="three" checked>3曲
+				<input type="radio" name="tof" value="four">4曲
+			</form>
+			<hr>
+
+			<form onsubmit="return false" name="chart1">
+				1曲目:
+				<input type="text" name="name" id="name1">
+				<select name="diff" id="diff1">
+					<option value="UTAGE">UTAGE</option>
+					<option value="BASIC">BASIC</option>
+					<option value="ADVANCED">ADVANCED</option>
+					<option value="EXPERT">EXPERT</option>
+					<option value="MASTER">MASTER</option>
+					<option value="ReMASTER">Re:MASTER</option>
+				</select>
+				<select name="ch_con" id="ch_con1">
+					<option value="10">1</option>
+					<option value="20">2</option>
+					<option value="30">3</option>
+					<option value="40">4</option>
+					<option value="50">5</option>
+					<option value="60">6</option>
+					<option value="70">7</option>
+					<option value="75">7+</option>
+					<option value="80">8</option>
+					<option value="85">8+</option>
+					<option value="90">9</option>
+					<option value="95">9+</option>
+					<option value="100">10</option>
+					<option value="105">10+</option>
+					<option value="110">11</option>
+					<option value="115">11+</option>
+					<option value="120">12</option>
+					<option value="125">12+</option>
+					<option value="130">13</option>
+					<option value="135">13+</option>
+					<option value="140">14</option>
+					<option value="145">14+</option>
+					<option value="150">15</option>
+				</select>
+				<input type="radio" name="type1" value="std" checked>STD
+				<input type="radio" name="type1" value="dx">DX
+				<br>
+				達成率:
+				<input type="number" step="0.0001" min="0" max="101" id="per1">
+				%, 
+				DXScore:
+				<input type="number" min="0" class="dxscore" id="sc1"><br>
+				内訳
+				<input type="number" name="perde" min="0" class="number" placeholder="CRITICAL" id="cr1">
+				<input type="number" name="perde" min="0" class="number" placeholder="PERFECT" id="pe1">
+				<input type="number" name="perde" min="0" class="number" placeholder="GREAT" id="gr1">
+				<input type="number" name="perde" min="0" class="number" placeholder="GOOD" id="go1">
+				<input type="number" name="perde" min="0" class="number" placeholder="MISS" id="mi1">
+			</form>
+
+			<form onsubmit="return false" name="chart2">
+				2曲目:
+				<input type="text" name="name2" id="name2">
+				<select name="diff" id="diff2">
+					<option value="UTAGE">UTAGE</option>
+					<option value="BASIC">BASIC</option>
+					<option value="ADVANCED">ADVANCED</option>
+					<option value="EXPERT">EXPERT</option>
+					<option value="MASTER">MASTER</option>
+					<option value="ReMASTER">Re:MASTER</option>
+				</select>
+				<select name="ch_con" id="ch_con2">
+					<option value="10">1</option>
+					<option value="20">2</option>
+					<option value="30">3</option>
+					<option value="40">4</option>
+					<option value="50">5</option>
+					<option value="60">6</option>
+					<option value="70">7</option>
+					<option value="75">7+</option>
+					<option value="80">8</option>
+					<option value="85">8+</option>
+					<option value="90">9</option>
+					<option value="95">9+</option>
+					<option value="100">10</option>
+					<option value="105">10+</option>
+					<option value="110">11</option>
+					<option value="115">11+</option>
+					<option value="120">12</option>
+					<option value="125">12+</option>
+					<option value="130">13</option>
+					<option value="135">13+</option>
+					<option value="140">14</option>
+					<option value="145">14+</option>
+					<option value="150">15</option>
+				</select>
+				<input type="radio" name="type2" value="std" checked>STD
+				<input type="radio" name="type2" value="dx">DX
+				<br>
+				達成率:
+				<input type="number" step="0.0001" min="0" max="101" id="per2">
+				%, 
+				DXScore:
+				<input type="number" min="0" class="dxscore" id="sc2"><br>
+				内訳
+				<input type="number" name="perde" min="0" class="number" placeholder="CRITICAL" id="cr2">
+				<input type="number" name="perde" min="0" class="number" placeholder="PERFECT" id="pe2">
+				<input type="number" name="perde" min="0" class="number" placeholder="GREAT" id="gr2">
+				<input type="number" name="perde" min="0" class="number" placeholder="GOOD" id="go2">
+				<input type="number" name="perde" min="0" class="number" placeholder="MISS" id="mi2">
+			</form>
+
+			<form onsubmit="return false" name="chart3">
+				3曲目:
+				<input type="text" name="name" id="name3">
+				<select name="diff" id="diff3">
+					<option value="UTAGE">UTAGE</option>
+					<option value="BASIC">BASIC</option>
+					<option value="ADVANCED">ADVANCED</option>
+					<option value="EXPERT">EXPERT</option>
+					<option value="MASTER">MASTER</option>
+					<option value="ReMASTER">Re:MASTER</option>
+				</select>
+				<select name="ch_con" id="ch_con3">
+					<option value="10">1</option>
+					<option value="20">2</option>
+					<option value="30">3</option>
+					<option value="40">4</option>
+					<option value="50">5</option>
+					<option value="60">6</option>
+					<option value="70">7</option>
+					<option value="75">7+</option>
+					<option value="80">8</option>
+					<option value="85">8+</option>
+					<option value="90">9</option>
+					<option value="95">9+</option>
+					<option value="100">10</option>
+					<option value="105">10+</option>
+					<option value="110">11</option>
+					<option value="115">11+</option>
+					<option value="120">12</option>
+					<option value="125">12+</option>
+					<option value="130">13</option>
+					<option value="135">13+</option>
+					<option value="140">14</option>
+					<option value="145">14+</option>
+					<option value="150">15</option>
+				</select>
+				<input type="radio" name="type3" value="std" checked>STD
+				<input type="radio" name="type3" value="dx">DX
+				<br>
+				達成率:
+				<input type="number" step="0.0001" min="0" max="101" id="per3">
+				%, 
+				DXScore:
+				<input type="number" min="0" class="dxscore" id="sc3"><br>
+				内訳
+				<input type="number" name="perde" min="0" class="number" placeholder="CRITICAL" id="cr3">
+				<input type="number" name="perde" min="0" class="number" placeholder="PERFECT" id="pe3">
+				<input type="number" name="perde" min="0" class="number" placeholder="GREAT" id="gr3">
+				<input type="number" name="perde" min="0" class="number" placeholder="GOOD" id="go3">
+				<input type="number" name="perde" min="0" class="number" placeholder="MISS" id="mi3">
+			</form>
+
+			<form onsubmit="return false" name="chart4">
+				4曲目:
+				<input type="text" name="name" id="name4">
+				<select name="diff" id="diff4">
+					<option value="UTAGE">UTAGE</option>
+					<option value="BASIC">BASIC</option>
+					<option value="ADVANCED">ADVANCED</option>
+					<option value="EXPERT">EXPERT</option>
+					<option value="MASTER">MASTER</option>
+					<option value="ReMASTER">Re:MASTER</option>
+				</select>
+				<select name="ch_con" id="ch_con4">
+					<option value="10">1</option>
+					<option value="20">2</option>
+					<option value="30">3</option>
+					<option value="40">4</option>
+					<option value="50">5</option>
+					<option value="60">6</option>
+					<option value="70">7</option>
+					<option value="75">7+</option>
+					<option value="80">8</option>
+					<option value="85">8+</option>
+					<option value="90">9</option>
+					<option value="95">9+</option>
+					<option value="100">10</option>
+					<option value="105">10+</option>
+					<option value="110">11</option>
+					<option value="115">11+</option>
+					<option value="120">12</option>
+					<option value="125">12+</option>
+					<option value="130">13</option>
+					<option value="135">13+</option>
+					<option value="140">14</option>
+					<option value="145">14+</option>
+					<option value="150">15</option>
+				</select>
+				<input type="radio" name="type4" value="std" checked>STD
+				<input type="radio" name="type4" value="dx">DX
+				<br>
+				達成率:
+				<input type="number" step="0.0001" min="0" max="101" id="per4">
+				%, 
+				DXScore:
+				<input type="number" min="0" class="dxscore" id="sc4"><br>
+				内訳
+				<input type="number" name="perde" min="0" class="number" placeholder="CRITICAL" id="cr4">
+				<input type="number" name="perde" min="0" class="number" placeholder="PERFECT" id="pe4">
+				<input type="number" name="perde" min="0" class="number" placeholder="GREAT" id="gr4">
+				<input type="number" name="perde" min="0" class="number" placeholder="GOOD" id="go4">
+				<input type="number" name="perde" min="0" class="number" placeholder="MISS" id="mi4">
+			</from><hr>
+			<button onclick="run();" style="margin: 10px; width: 100px; height: 35px;">実行</button>
+		</div>
+
+		<div class="result" id="result">
+		</div>
+		<div class="footer">
+			<div class="container">
+				<div class="footer_main">
+					<a href="../index.html" style="color: #cccccc;">FuyuGitsune_Topへ</a>
+				</div>
+				<div class="footer_right">
+					&copy; 2026 FuyuGitsune
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
+
